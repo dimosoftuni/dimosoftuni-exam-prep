@@ -24,8 +24,6 @@ jobs:
       run: npm run test:unit
     - name: Display SoftUni username
       run: echo "dimosoftuni"
-    - name: Wait for deploy
-      run: sleep 60
 
   deploy:
     needs: build-test
@@ -36,6 +34,8 @@ jobs:
         with:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
+      - name: Wait for deploy
+        run: sleep 60
 
   run-ui-tests:
     needs: deploy
