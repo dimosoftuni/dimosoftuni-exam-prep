@@ -24,6 +24,8 @@ jobs:
       run: npm run test:unit
     - name: Display SoftUni username
       run: echo "dimosoftuni"
+    - name: Wait for deploy
+      run: sleep 60
 
   deploy:
     needs: build-test

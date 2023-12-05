@@ -6,6 +6,7 @@
   "scripts": {
     "test:unit": "mocha -u tdd 'tests/unit/*.js'",
     "test:ui": "npx playwright test",
+    "test:ui:local": "set URL='http://localhost:8080'&&npx playwright test",
     "start": "node index.js"
   },
   "keywords": [],
